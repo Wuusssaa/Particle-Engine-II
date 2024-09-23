@@ -30,7 +30,34 @@ public class OceanStuff {
     void display() {
         main.fill(color);
         main.ellipse(x, y, size, size);
+        move();
     }
+
+//making stuff move
+void move() {
+
+    x += xvel*xdirection; //moves the fish
+    y += yvel*ydirection; //moves the bubble
+
+    if(y >= main.height || y <= 0){
+        ydirection *= -1;
+    }
+
+    if(x >= main.width || x <= 0){
+        xdirection *= -1;
+    }
+}
+
+void faster() {
+    yvel++;
+    xvel++;
+}
+
+//slows down bubble
+void slower() {
+    yvel--;
+    xvel--;
+}
 
 //test if one object has hit another object in a radius -- test later
     boolean collides(OceanStuff object) {
@@ -50,6 +77,4 @@ public class OceanStuff {
     float getX() {return x;}
     float getY() {return y;}
     float getSize() {return size;}
-
-
 }

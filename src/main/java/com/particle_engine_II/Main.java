@@ -7,7 +7,6 @@
 
 package com.particle_engine_II;
 import processing.core.*;
-import processing.javafx.PSurfaceFX.PApplicationFX;
 
 public class Main extends PApplet {
 
